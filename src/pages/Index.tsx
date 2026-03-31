@@ -10,7 +10,7 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
-import CustomCursor from "@/components/CustomCursor";
+
 import BackToTop from "@/components/BackToTop";
 import CookieBanner from "@/components/CookieBanner";
 
