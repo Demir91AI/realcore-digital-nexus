@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { Search, Compass, Code, Rocket } from "lucide-react";
 
 const steps = [
-  { icon: Search, title: "Analyse", desc: "Wir analysieren Ihre Anforderungen, Zielgruppe und den Markt." },
-  { icon: Compass, title: "Strategie", desc: "Wir entwickeln eine maßgeschneiderte digitale Strategie." },
-  { icon: Code, title: "Entwicklung", desc: "Agile Entwicklung mit modernsten Technologien." },
-  { icon: Rocket, title: "Launch", desc: "Go-live mit kontinuierlicher Optimierung und Support." },
+  { icon: Search, title: "Analyse", desc: "Wir verstehen Ihr Unternehmen, Ihre Ziele und Ihre Zielgruppe." },
+  { icon: Compass, title: "Strategie", desc: "Wir entwickeln eine klare, umsetzbare digitale Lösung." },
+  { icon: Code, title: "Umsetzung", desc: "Wir setzen Ihr Projekt effizient und professionell um." },
+  { icon: Rocket, title: "Launch & Support", desc: "Wir begleiten Sie nach dem Start und optimieren kontinuierlich." },
 ];
 
 const ProcessSection = () => {
@@ -26,7 +26,6 @@ const ProcessSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-4 gap-6 relative">
-          {/* Connection line */}
           <div className="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50" />
 
           {steps.map((s, i) => (

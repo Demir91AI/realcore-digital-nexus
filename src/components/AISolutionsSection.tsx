@@ -1,13 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Brain, Sparkles, BarChart3, Workflow, Shield, Cpu } from "lucide-react";
+import { Workflow, FileText, BarChart3, MessageSquare } from "lucide-react";
 
 const features = [
-  { icon: Sparkles, text: "Intelligente Automatisierung von Geschäftsprozessen" },
-  { icon: BarChart3, text: "Datengetriebene Analysen und Prognosen" },
-  { icon: Workflow, text: "Machine Learning Modelle für Ihre Use Cases" },
-  { icon: Shield, text: "KI-gestützte Qualitätssicherung" },
-  { icon: Cpu, text: "Natural Language Processing & Chatbots" },
+  { icon: Workflow, text: "Automatisierung von Geschäftsprozessen" },
+  { icon: FileText, text: "Digitale Formulare & Systeme" },
+  { icon: BarChart3, text: "Effizientere Abläufe" },
+  { icon: MessageSquare, text: "Einfache Kundenkommunikation (Formulare, Chatlösungen)" },
 ];
 
 const AISolutionsSection = () => {
@@ -16,7 +15,6 @@ const AISolutionsSection = () => {
 
   return (
     <section id="ai" className="py-24 relative overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(222 47% 5%), hsl(258 40% 8%), hsl(222 47% 5%))" }} />
       <div className="absolute inset-0 particle-grid opacity-50" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full orb" style={{ background: "radial-gradient(circle, hsl(258 100% 59% / 0.12), transparent 60%)" }} />
@@ -28,16 +26,13 @@ const AISolutionsSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-mono mb-6">
-              <Brain size={14} /> KI-POWERED
-            </div>
+            <p className="text-primary font-mono text-sm tracking-widest uppercase mb-6">Automatisierung</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">KI, die Ihre Prozesse</span>
-              <br />transformiert.
+              <span className="gradient-text">Digitale Automatisierung</span>
+              <br />für Ihr Unternehmen.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Nutzen Sie die Kraft künstlicher Intelligenz, um Ihre Geschäftsprozesse zu
-              optimieren, Kosten zu senken und neue Wachstumschancen zu erschließen.
+              Wir helfen Ihnen, manuelle Prozesse durch digitale Lösungen zu ersetzen – einfach, effizient und auf Ihre Abläufe abgestimmt.
             </p>
 
             <div className="space-y-4">
@@ -66,9 +61,7 @@ const AISolutionsSection = () => {
             className="relative hidden lg:block"
           >
             <div className="aspect-square relative">
-              {/* Neural net visualization */}
               <svg className="w-full h-full" viewBox="0 0 400 400">
-                {/* Nodes */}
                 {[
                   [200, 80], [100, 160], [300, 160], [60, 260], [160, 260], [240, 260], [340, 260], [130, 340], [270, 340],
                 ].map(([cx, cy], i) => (
@@ -79,7 +72,6 @@ const AISolutionsSection = () => {
                     <circle cx={cx} cy={cy} r="16" fill="none" stroke="hsl(197 100% 50% / 0.15)" strokeWidth="1" />
                   </g>
                 ))}
-                {/* Connections */}
                 {[
                   [200, 80, 100, 160], [200, 80, 300, 160],
                   [100, 160, 60, 260], [100, 160, 160, 260],

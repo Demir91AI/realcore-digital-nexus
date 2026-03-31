@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Services", href: "#services" },
+  { label: "Leistungen", href: "#services" },
   { label: "Über uns", href: "#about" },
   { label: "Prozess", href: "#process" },
-  { label: "KI-Lösungen", href: "#ai" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Kontakt", href: "#contact" },
+  { label: "Projekte", href: "#portfolio" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const Navbar = () => {
@@ -47,7 +46,7 @@ const Navbar = () => {
             </a>
           ))}
           <a href="#contact" className="btn-glow text-sm !px-5 !py-2">
-            Projekt starten
+            Kontakt
           </a>
         </div>
 
@@ -75,8 +74,8 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a href="#contact" className="btn-glow text-sm !px-5 !py-2 inline-block mt-2">
-            Projekt starten
+          <a href="#contact" onClick={() => setMobileOpen(false)} className="btn-glow text-sm !px-5 !py-2 inline-block mt-2">
+            Kontakt
           </a>
         </motion.div>
       )}

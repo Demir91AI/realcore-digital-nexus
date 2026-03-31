@@ -1,17 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Mail, Linkedin, Twitter } from "lucide-react";
+import { Send } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder
     alert("Nachricht gesendet! (Demo)");
-    setForm({ name: "", email: "", message: "" });
+    setForm({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
@@ -58,7 +57,16 @@ const ContactSection = () => {
               />
             </div>
             <div>
-              <label className="text-sm text-muted-foreground mb-1.5 block">Nachricht</label>
+              <label className="text-sm text-muted-foreground mb-1.5 block">Telefon (optional)</label>
+              <input
+                type="tel"
+                value={form.phone}
+                onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+              />
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground mb-1.5 block">Ihre Nachricht / Ihr Projekt</label>
               <textarea
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -68,21 +76,12 @@ const ContactSection = () => {
               />
             </div>
             <button type="submit" className="btn-glow w-full flex items-center justify-center gap-2">
-              <Send size={16} /> Senden
+              <Send size={16} /> Jetzt anfragen
             </button>
+            <p className="text-xs text-muted-foreground text-center">
+              Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+            </p>
           </motion.form>
-
-          <div className="flex items-center justify-center gap-6 mt-8">
-            <a href="mailto:info@realcore.digital" className="text-muted-foreground hover:text-primary transition-colors">
-              <Mail size={20} />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin size={20} />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Twitter size={20} />
-            </a>
-          </div>
         </div>
       </div>
     </section>
