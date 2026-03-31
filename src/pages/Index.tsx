@@ -16,7 +16,7 @@ import CookieBanner from "@/components/CookieBanner";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground">
-    <CustomCursor />
+    
     <Navbar />
     <HeroSection />
     <ServicesSection />
