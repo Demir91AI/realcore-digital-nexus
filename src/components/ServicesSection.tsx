@@ -1,15 +1,12 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Server, Globe, Code2, Megaphone, Layout, Brain } from "lucide-react";
+import { Monitor, Settings, TrendingUp, Layers } from "lucide-react";
 
 const services = [
-  { icon: Server, title: "IT-Dienstleistungen", desc: "Zuverlässige IT-Infrastruktur und Support für Ihr Unternehmen.", highlight: false },
-  { icon: Globe, title: "Webentwicklung", desc: "Moderne, performante Websites und Web-Applikationen.", highlight: false },
-  { icon: Code2, title: "Softwareentwicklung", desc: "Maßgeschneiderte Softwarelösungen für komplexe Anforderungen.", highlight: false },
-  { icon: Megaphone, title: "Online-Marketing", desc: "Strategisches Digital-Marketing für messbare Ergebnisse.", highlight: false },
-  { icon: Layout, title: "Digitale Plattformen", desc: "Skalierbare Plattformen für Ihre digitalen Geschäftsmodelle.", highlight: false },
-  { icon: Brain, title: "KI-gestützte Lösungen", desc: "Intelligente Automatisierung und datengetriebene Entscheidungen.", highlight: true },
+  { icon: Monitor, title: "Moderne Websites, die Kunden bringen", desc: "Wir erstellen schnelle, mobiloptimierte Websites und Landing Pages, die Ihr Unternehmen professionell präsentieren und neue Kunden gewinnen." },
+  { icon: Settings, title: "Digitale Prozesse statt manuelle Arbeit", desc: "Wir automatisieren wiederkehrende Aufgaben und erstellen Systeme, die Ihnen Zeit sparen und Abläufe effizienter machen." },
+  { icon: TrendingUp, title: "Mehr Sichtbarkeit. Mehr Kunden.", desc: "Wir unterstützen Sie bei Social Media, Werbung und Lead-Generierung, damit Ihr Unternehmen online wächst." },
+  { icon: Layers, title: "Maßgeschneiderte digitale Lösungen", desc: "Wir entwickeln Web-Apps und interne Tools, die genau auf Ihre Anforderungen zugeschnitten sind." },
 ];
 
 const ServicesSection = () => {
@@ -26,35 +23,22 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-mono text-sm tracking-widest uppercase mb-3">Was wir bieten</p>
-          <h2 className="text-3xl md:text-5xl font-bold">Unsere <span className="gradient-text">Services</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold">Unsere <span className="gradient-text">Leistungen</span></h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`glass-card p-8 group hover:-translate-y-2 transition-all duration-300 ${
-                s.highlight ? "glow-secondary border-accent/30" : "hover:border-primary/30"
-              }`}
+              className="glass-card p-8 group hover:-translate-y-2 transition-all duration-300 hover:border-primary/30"
             >
-              <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-5 ${
-                s.highlight
-                  ? "bg-accent/20 text-accent"
-                  : "bg-primary/10 text-primary group-hover:bg-primary/20"
-              } transition-colors duration-300`}>
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-5 bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors duration-300">
                 <s.icon size={24} />
               </div>
-              <div className="flex items-center gap-2 mb-3">
-                <h3 className="text-lg font-semibold text-foreground">{s.title}</h3>
-                {s.highlight && (
-                  <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-accent/20 text-accent border border-accent/30 animate-glow-pulse">
-                    AI
-                  </span>
-                )}
-              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">{s.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}

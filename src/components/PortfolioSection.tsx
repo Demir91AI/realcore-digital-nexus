@@ -3,9 +3,9 @@ import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
 
 const projects = [
-  { title: "E-Commerce Plattform", category: "Webentwicklung", desc: "Moderne, skalierbare Shopping-Plattform mit KI-gestützter Produktempfehlung." },
-  { title: "SaaS Dashboard", category: "Softwareentwicklung", desc: "Echtzeit-Analytics Dashboard für ein führendes FinTech-Unternehmen." },
-  { title: "KI Chatbot System", category: "KI-Lösung", desc: "Intelligenter Kundenservice-Bot mit Natural Language Processing." },
+  { title: "Unternehmenswebsite", category: "Website", desc: "Moderne Website für ein lokales Unternehmen mit Fokus auf Kundengewinnung." },
+  { title: "Landing Page", category: "Marketing", desc: "Optimierte Seite zur Generierung von Anfragen und Leads." },
+  { title: "Web-Anwendung", category: "Software", desc: "Individuelle Lösung zur digitalen Abwicklung interner Prozesse." },
 ];
 
 const PortfolioSection = () => {
@@ -22,6 +22,7 @@ const PortfolioSection = () => {
         >
           <p className="text-primary font-mono text-sm tracking-widest uppercase mb-3">Portfolio</p>
           <h2 className="text-3xl md:text-5xl font-bold">Ausgewählte <span className="gradient-text">Projekte</span></h2>
+          <p className="text-sm text-muted-foreground mt-3">Beispielprojekte – Referenzen auf Anfrage</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
