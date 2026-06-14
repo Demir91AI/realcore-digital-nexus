@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/realcore-mark.png.asset.json";
+import BrandMark from "@/components/BrandMark";
 
 const links = [
   { label: "Leistungen", href: "#services" },
@@ -40,17 +40,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-3 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <img
-            src={logo.url}
-            alt="RealCore Digital"
-            className="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-            style={{ filter: "drop-shadow(0 0 12px hsl(197 100% 50% / 0.35))" }}
-          />
+          <BrandMark size={42} className="transition-transform duration-300 group-hover:scale-105" />
           <div className="hidden sm:flex flex-col leading-tight">
             <span className="text-base font-bold text-foreground tracking-tight">
               RealCore <span className="gradient-text">Digital</span>
             </span>
-            <span className="text-[10px] text-muted-foreground tracking-wider uppercase">
+            <span className="text-[10px] text-muted-foreground tracking-[0.18em] uppercase">
               Klar denken. Digital umsetzen.
             </span>
           </div>
