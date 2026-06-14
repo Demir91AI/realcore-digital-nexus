@@ -49,15 +49,39 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6">
+          {/* Live indicator badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/25 backdrop-blur-md mb-8"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+            </span>
+            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-semibold text-primary/90">
+              Digitalagentur für den Mittelstand
+            </span>
+          </motion.div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.1] tracking-tight mb-6">
             Wir entwickeln Websites und digitale Lösungen,{" "}
-            <span className="gradient-text">die Ihr Unternehmen voranbringen.</span>
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, hsl(197 100% 60%), hsl(228 95% 65%), hsl(258 100% 70%))",
+              }}
+            >
+              die Ihr Unternehmen voranbringen.
+            </span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
             Von der modernen Website bis zur vollständigen digitalen Präsenz – wir helfen kleinen und mittelständischen Unternehmen, professionell online aufzutreten.
           </p>
 
-          <div className="h-8 mb-8 font-mono text-base md:text-lg">
+          <div className="h-8 mb-10 font-mono text-base md:text-lg">
             <span className="text-muted-foreground">&gt; </span>
             <span className="gradient-text">{text}</span>
             <span className="text-primary animate-pulse">|</span>
