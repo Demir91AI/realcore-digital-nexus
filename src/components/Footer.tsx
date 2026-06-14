@@ -30,8 +30,7 @@ const Footer = () => (
               </span>
             </div>
           </a>
-          <p className="text-sm text-muted-foreground mt-3">Klar denken. Digital umsetzen.</p>
-          <p className="text-xs text-muted-foreground mt-3 max-w-xs">
+          <p className="text-sm text-muted-foreground mt-4">
             Professionelle digitale Lösungen für kleine und mittelständische Unternehmen.
           </p>
         </div>
