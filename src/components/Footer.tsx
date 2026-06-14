@@ -15,17 +15,12 @@ const Footer = () => (
       <div className="grid md:grid-cols-3 gap-10">
         <div>
           <a href="#" className="inline-flex items-center gap-3">
-            <img
-              src={logo.url}
-              alt="RealCore Digital Logo"
-              className="h-9 w-auto object-contain"
-              style={{ filter: "drop-shadow(0 0 10px hsl(197 100% 50% / 0.3))" }}
-            />
+            <BrandMark size={36} />
             <div className="flex flex-col leading-tight">
               <span className="text-base font-bold text-foreground tracking-tight">
                 RealCore <span className="gradient-text">Digital</span>
               </span>
-              <span className="text-[10px] text-muted-foreground tracking-wider uppercase">
+              <span className="text-[10px] text-muted-foreground tracking-[0.18em] uppercase">
                 Klar denken. Digital umsetzen.
               </span>
             </div>
