@@ -14,11 +14,23 @@ const Footer = () => (
     <div className="container mx-auto px-6">
       <div className="grid md:grid-cols-3 gap-10">
         <div>
-          <a href="#" className="inline-block">
-            <img src={logo.url} alt="RealCore Digital Logo" className="h-12 w-auto" />
+          <a href="#" className="inline-flex items-center gap-3">
+            <img
+              src={logo.url}
+              alt="RealCore Digital Logo"
+              className="h-12 w-auto object-contain"
+              style={{ filter: "brightness(1.2) contrast(1.1)" }}
+            />
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-foreground leading-tight tracking-tight">
+                RealCore Digital
+              </span>
+              <span className="text-[10px] text-muted-foreground tracking-wide leading-tight">
+                Klar denken. Digital umsetzen.
+              </span>
+            </div>
           </a>
-          <p className="text-sm text-muted-foreground mt-3">Klar denken. Digital umsetzen.</p>
-          <p className="text-xs text-muted-foreground mt-3 max-w-xs">
+          <p className="text-sm text-muted-foreground mt-4">
             Professionelle digitale Lösungen für kleine und mittelständische Unternehmen.
           </p>
         </div>

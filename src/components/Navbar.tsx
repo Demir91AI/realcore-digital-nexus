@@ -31,8 +31,21 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <img src={logo.url} alt="RealCore Digital Logo" className="h-10 w-auto" />
+        <a href="#" className="flex items-center gap-3">
+          <img
+            src={logo.url}
+            alt="RealCore Digital Logo"
+            className="h-12 w-auto object-contain"
+            style={{ filter: "brightness(1.2) contrast(1.1)" }}
+          />
+          <div className="flex flex-col">
+            <span className="text-lg font-bold text-foreground leading-tight tracking-tight">
+              RealCore Digital
+            </span>
+            <span className="text-[10px] text-muted-foreground tracking-wide leading-tight">
+              Klar denken. Digital umsetzen.
+            </span>
+          </div>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
