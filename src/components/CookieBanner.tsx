@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const CookieBanner = () => {
   const [visible, setVisible] = useState(false);
@@ -32,7 +33,8 @@ const CookieBanner = () => {
           <div className="container mx-auto max-w-3xl">
             <div className="glass-card p-4 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-sm text-muted-foreground text-center sm:text-left">
-                Diese Website verwendet Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. Weitere Informationen finden Sie in unserer Datenschutzerklärung.
+                Diese Website verwendet Cookies, um Ihnen die bestmögliche Erfahrung zu bieten. Weitere Informationen finden Sie in unserer{" "}
+                <Link to="/datenschutz" className="text-primary hover:underline">Datenschutzerklärung</Link>.
               </p>
               <div className="flex gap-3 shrink-0">
                 <button onClick={handleDecline} className="btn-ghost-glow text-sm !px-4 !py-2">
