@@ -17,10 +17,10 @@ const CTABanner = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Bereit für <span className="gradient-text">Ihr Projekt?</span>
+            Bereit für Ihren <span className="gradient-text">professionellen Online-Auftritt?</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
-            Lassen Sie uns gemeinsam Ihre digitale Lösung umsetzen. Kostenlose Erstberatung – unverbindlich.
+            Lassen Sie uns gemeinsam Ihre digitale Präsenz aufbauen. Kostenlose Erstberatung – unverbindlich und unkompliziert.
           </p>
           <a href="#contact" className="btn-glow text-base !px-8 !py-3 text-lg">
             Jetzt Projekt anfragen

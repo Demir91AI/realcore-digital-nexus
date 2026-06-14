@@ -1,11 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Sparkles, ShieldCheck, Cpu } from "lucide-react";
+import { Target, CheckCircle2, Lock } from "lucide-react";
 
 const values = [
-  { icon: Sparkles, label: "Individuelle Lösungen", desc: "Jedes Projekt wird auf Ihre Bedürfnisse zugeschnitten." },
-  { icon: ShieldCheck, label: "Fokus auf Qualität", desc: "Sauberer Code, durchdachtes Design, langlebige Ergebnisse." },
-  { icon: Cpu, label: "Moderne Technologien", desc: "Wir setzen auf aktuelle, bewährte Tools und Frameworks." },
+  { icon: Target, label: "Individuelle Lösungen", desc: "Maßgeschneidert für jedes Unternehmen." },
+  { icon: CheckCircle2, label: "Vom ersten Gespräch bis zum Launch", desc: "Wir begleiten Sie durch den gesamten Prozess." },
+  { icon: Lock, label: "Zuverlässig & modern", desc: "Ohne Komplikationen, ohne versteckte Kosten." },
 ];
 
 const AboutSection = () => {
@@ -63,13 +63,16 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                RealCore Digital ist eine moderne Digitalagentur, die Unternehmen bei der Umsetzung digitaler Lösungen unterstützt.
+                RealCore Digital ist eine moderne Digitalagentur, die Unternehmen bei der Umsetzung professioneller digitaler Lösungen unterstützt.
               </p>
               <p>
-                Unser Fokus liegt auf klaren, funktionalen und skalierbaren Lösungen – von Websites bis hin zu individuellen Systemen.
+                Unser Ziel ist es, kleinen und mittelständischen Unternehmen zu helfen, ein starkes und professionelles Online-Auftreten aufzubauen – von der ersten Idee bis zur fertigen Website.
               </p>
               <p>
-                Wir arbeiten praxisnah, effizient und zielorientiert – ohne unnötige Komplexität.
+                Wir begleiten unsere Kunden durch den gesamten Prozess: von der Domain-Registrierung über Hosting und geschäftliche E-Mail-Adressen bis hin zu Google Business Profilen und technischem Support.
+              </p>
+              <p>
+                Wir glauben, dass jedes Unternehmen – unabhängig von seiner Größe – eine professionelle Präsentation verdient, die Vertrauen weckt und einen starken ersten Eindruck hinterlässt.
               </p>
             </div>
           </motion.div>

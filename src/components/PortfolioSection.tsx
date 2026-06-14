@@ -3,9 +3,9 @@ import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
 
 const projects = [
-  { title: "Unternehmenswebsite", category: "Website", desc: "Moderne Website für ein lokales Unternehmen mit Fokus auf Kundengewinnung." },
-  { title: "Landing Page", category: "Marketing", desc: "Optimierte Seite zur Generierung von Anfragen und Leads." },
-  { title: "Web-Anwendung", category: "Software", desc: "Individuelle Lösung zur digitalen Abwicklung interner Prozesse." },
+  { title: "Unternehmenswebsite", category: "Website", desc: "Moderne, mobiloptimierte Website für ein lokales Unternehmen – inklusive Kontaktformular und Google Business Integration." },
+  { title: "Kompletter Online-Start", category: "Domain & Hosting", desc: "Domain, Hosting, geschäftliche E-Mail-Adressen und Google Business Profil – alles eingerichtet und betriebsbereit." },
+  { title: "Mehr lokale Sichtbarkeit", category: "SEO & Marketing", desc: "SEO-Optimierung und Google Business Optimierung für mehr Reichweite und neue Kunden in der Region." },
 ];
 
 const PortfolioSection = () => {
@@ -21,8 +21,8 @@ const PortfolioSection = () => {
           className="text-center mb-16"
         >
           <p className="text-primary font-mono text-sm tracking-widest uppercase mb-3">Portfolio</p>
-          <h2 className="text-3xl md:text-5xl font-bold">Ausgewählte <span className="gradient-text">Projekte</span></h2>
-          <p className="text-sm text-muted-foreground mt-3">Beispielprojekte – Referenzen auf Anfrage</p>
+          <h2 className="text-3xl md:text-5xl font-bold"><span className="gradient-text">Beispielprojekte</span></h2>
+          <p className="text-sm text-muted-foreground mt-3">Referenzen auf Anfrage erhältlich</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">

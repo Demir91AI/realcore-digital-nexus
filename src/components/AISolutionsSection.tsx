@@ -1,12 +1,16 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Workflow, FileText, BarChart3, MessageSquare } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const features = [
-  { icon: Workflow, text: "Automatisierung von Geschäftsprozessen" },
-  { icon: FileText, text: "Digitale Formulare & Systeme" },
-  { icon: BarChart3, text: "Effizientere Abläufe" },
-  { icon: MessageSquare, text: "Einfache Kundenkommunikation (Formulare, Chatlösungen)" },
+  "Professionelle Website-Erstellung",
+  "Domain-Registrierung & Hosting-Setup",
+  "Geschäftliche E-Mail-Adressen",
+  "Google Business Profile Einrichtung & Optimierung",
+  "Grundlegende SEO-Optimierung",
+  "Grafischer Content für Ihre Website",
+  "Technische Wartung & Updates",
+  "Digitale Beratung auf Augenhöhe",
 ];
 
 const AISolutionsSection = () => {
@@ -14,7 +18,7 @@ const AISolutionsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="ai" className="py-24 relative overflow-hidden">
+    <section id="komplett" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, hsl(222 47% 5%), hsl(258 40% 8%), hsl(222 47% 5%))" }} />
       <div className="absolute inset-0 particle-grid opacity-50" />
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full orb" style={{ background: "radial-gradient(circle, hsl(258 100% 59% / 0.12), transparent 60%)" }} />
@@ -26,28 +30,28 @@ const AISolutionsSection = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-primary font-mono text-sm tracking-widest uppercase mb-6">Automatisierung</p>
+            <p className="text-primary font-mono text-sm tracking-widest uppercase mb-6">Ihr kompletter digitaler Auftritt</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Digitale Automatisierung</span>
-              <br />für Ihr Unternehmen.
+              <span className="gradient-text">Alles aus einer Hand</span>
+              <br />für Ihren professionellen Online-Auftritt
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Wir helfen Ihnen, manuelle Prozesse durch digitale Lösungen zu ersetzen – einfach, effizient und auf Ihre Abläufe abgestimmt.
+              Von der Domain bis zur Google-Präsenz – wir kümmern uns um alles, damit Sie sich auf Ihr Kerngeschäft konzentrieren können.
             </p>
 
-            <div className="space-y-4">
-              {features.map((f, i) => (
+            <div className="grid sm:grid-cols-2 gap-3">
+              {features.map((text, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + i * 0.1 }}
+                  transition={{ delay: 0.3 + i * 0.08 }}
                   className="flex items-center gap-3 group"
                 >
-                  <div className="w-8 h-8 rounded-md bg-accent/10 text-accent flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
-                    <f.icon size={16} />
+                  <div className="w-7 h-7 rounded-md bg-accent/10 text-accent flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors glow-primary">
+                    <Sparkles size={14} />
                   </div>
-                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{f.text}</span>
+                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{text}</span>
                 </motion.div>
               ))}
             </div>
