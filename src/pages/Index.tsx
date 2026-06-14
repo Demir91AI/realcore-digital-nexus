@@ -5,18 +5,15 @@ import AboutSection from "@/components/AboutSection";
 import ProcessSection from "@/components/ProcessSection";
 import AISolutionsSection from "@/components/AISolutionsSection";
 import PortfolioSection from "@/components/PortfolioSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import CTABanner from "@/components/CTABanner";
 import Footer from "@/components/Footer";
-
 import BackToTop from "@/components/BackToTop";
 import CookieBanner from "@/components/CookieBanner";
 
 const Index = () => (
   <div className="min-h-screen bg-background text-foreground">
-    
     <Navbar />
     <HeroSection />
     <ServicesSection />
@@ -24,15 +21,14 @@ const Index = () => (
     <ProcessSection />
     <AISolutionsSection />
     <PortfolioSection />
-    <TestimonialsSection />
     <FAQSection />
-    <ContactSection />
     <CTABanner />
+    <ContactSection />
     <Footer />
     <BackToTop />
     <CookieBanner />
   </div>
 );
 
-
 export default Index;
+

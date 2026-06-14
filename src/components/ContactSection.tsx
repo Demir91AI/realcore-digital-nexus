@@ -5,12 +5,12 @@ import { Send } from "lucide-react";
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Nachricht gesendet! (Demo)");
-    setForm({ name: "", email: "", phone: "", message: "" });
+    setForm({ name: "", email: "", phone: "", company: "", message: "" });
   };
 
   return (
@@ -37,7 +37,7 @@ const ContactSection = () => {
             className="glass-card p-8 space-y-5"
           >
             <div>
-              <label className="text-sm text-muted-foreground mb-1.5 block">Name</label>
+              <label className="text-sm text-muted-foreground mb-1.5 block">Ihr Name</label>
               <input
                 type="text"
                 value={form.name}
@@ -47,7 +47,7 @@ const ContactSection = () => {
               />
             </div>
             <div>
-              <label className="text-sm text-muted-foreground mb-1.5 block">E-Mail</label>
+              <label className="text-sm text-muted-foreground mb-1.5 block">E-Mail-Adresse</label>
               <input
                 type="email"
                 value={form.email}
@@ -57,11 +57,20 @@ const ContactSection = () => {
               />
             </div>
             <div>
-              <label className="text-sm text-muted-foreground mb-1.5 block">Telefon (optional)</label>
+              <label className="text-sm text-muted-foreground mb-1.5 block">Telefonnummer (optional)</label>
               <input
                 type="tel"
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+              />
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground mb-1.5 block">Ihr Unternehmen / Ihre Branche (optional)</label>
+              <input
+                type="text"
+                value={form.company}
+                onChange={(e) => setForm({ ...form, company: e.target.value })}
                 className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
               />
             </div>

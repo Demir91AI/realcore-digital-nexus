@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { Search, Compass, Code, Rocket } from "lucide-react";
 
 const steps = [
-  { icon: Search, title: "Analyse", desc: "Wir verstehen Ihr Unternehmen, Ihre Ziele und Ihre Zielgruppe." },
-  { icon: Compass, title: "Strategie", desc: "Wir entwickeln eine klare, umsetzbare digitale Lösung." },
-  { icon: Code, title: "Umsetzung", desc: "Wir setzen Ihr Projekt effizient und professionell um." },
-  { icon: Rocket, title: "Launch & Support", desc: "Wir begleiten Sie nach dem Start und optimieren kontinuierlich." },
+  { icon: Search, title: "Erstgespräch & Analyse", desc: "Wir verstehen Ihr Unternehmen, Ihre Ziele und was Sie von Ihrer Website erwarten." },
+  { icon: Compass, title: "Konzept & Angebot", desc: "Sie erhalten ein klares Konzept und ein transparentes Angebot – ohne versteckte Kosten." },
+  { icon: Code, title: "Umsetzung", desc: "Wir entwickeln Ihre Website professionell und effizient – mit regelmäßigen Updates für Sie." },
+  { icon: Rocket, title: "Launch & Support", desc: "Wir veröffentlichen Ihre Website und bleiben als verlässlicher Partner an Ihrer Seite." },
 ];
 
 const ProcessSection = () => {
@@ -23,6 +23,7 @@ const ProcessSection = () => {
         >
           <p className="text-primary font-mono text-sm tracking-widest uppercase mb-3">So arbeiten wir</p>
           <h2 className="text-3xl md:text-5xl font-bold">Unser <span className="gradient-text">Prozess</span></h2>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">Vom ersten Gespräch bis zur fertigen Website – klar und strukturiert.</p>
         </motion.div>
 
         <div className="grid md:grid-cols-4 gap-6 relative">

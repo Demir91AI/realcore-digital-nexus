@@ -3,11 +3,13 @@ import { useRef } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
-  { q: "Was kostet eine Website?", a: "Die Kosten hängen vom Umfang ab. Wir erstellen individuelle Angebote – kontaktieren Sie uns für eine kostenlose Erstberatung." },
-  { q: "Wie lange dauert ein Projekt?", a: "Eine einfache Website ist oft in 2–4 Wochen fertig. Größere Projekte planen wir gemeinsam mit Ihnen." },
-  { q: "Ich habe keine technischen Kenntnisse – ist das ein Problem?", a: "Nein. Wir erklären alles verständlich und begleiten Sie durch den gesamten Prozess." },
-  { q: "Kümmert ihr euch auch um Hosting und Pflege?", a: "Ja. Wir bieten auch Betreuung, Updates und technischen Support nach dem Launch an." },
-  { q: "In welchen Branchen arbeitet ihr?", a: "Wir arbeiten mit kleinen und mittelständischen Unternehmen aus verschiedenen Branchen zusammen." },
+  { q: "Was kostet eine Website?", a: "Die Kosten hängen vom Umfang und den gewünschten Funktionen ab. Wir erstellen Ihnen ein individuelles, transparentes Angebot – kontaktieren Sie uns für eine kostenlose Erstberatung." },
+  { q: "Wie lange dauert die Erstellung einer Website?", a: "Eine professionelle Website ist in der Regel innerhalb von 2–4 Wochen fertiggestellt. Den genauen Zeitplan besprechen wir gemeinsam." },
+  { q: "Ich habe keine technischen Kenntnisse – ist das ein Problem?", a: "Überhaupt nicht. Wir erklären alles verständlich und begleiten Sie Schritt für Schritt durch den gesamten Prozess – ohne Fachjargon." },
+  { q: "Kümmert ihr euch auch um Domain und Hosting?", a: "Ja. Wir übernehmen die Registrierung Ihrer Wunschdomain, richten das Hosting ein und kümmern uns um alle technischen Details." },
+  { q: "Bekomme ich auch eine geschäftliche E-Mail-Adresse?", a: "Ja. Wir richten für Sie professionelle Geschäfts-E-Mail-Adressen ein, z. B. info@ihrefirma.de – für einen seriösen Auftritt." },
+  { q: "Was ist Google Business und brauche ich das?", a: "Google Business ermöglicht es, dass Ihr Unternehmen bei Google Maps und der lokalen Suche erscheint. Für lokale Unternehmen ist das sehr wichtig – und wir richten es für Sie ein." },
+  { q: "Bietet ihr auch Wartung und Support nach dem Launch an?", a: "Ja. Wir bieten laufende Wartung, technischen Support und regelmäßige Updates – damit Ihre Website immer aktuell und sicher bleibt." },
 ];
 
 const FAQSection = () => {

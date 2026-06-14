@@ -1,12 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Monitor, Settings, TrendingUp, Layers } from "lucide-react";
+import { Monitor, Server, Mail, TrendingUp, FileText, Shield } from "lucide-react";
 
 const services = [
-  { icon: Monitor, title: "Moderne Websites, die Kunden bringen", desc: "Wir erstellen schnelle, mobiloptimierte Websites und Landing Pages, die Ihr Unternehmen professionell präsentieren und neue Kunden gewinnen." },
-  { icon: Settings, title: "Digitale Prozesse statt manuelle Arbeit", desc: "Wir automatisieren wiederkehrende Aufgaben und erstellen Systeme, die Ihnen Zeit sparen und Abläufe effizienter machen." },
-  { icon: TrendingUp, title: "Mehr Sichtbarkeit. Mehr Kunden.", desc: "Wir unterstützen Sie bei Social Media, Werbung und Lead-Generierung, damit Ihr Unternehmen online wächst." },
-  { icon: Layers, title: "Maßgeschneiderte digitale Lösungen", desc: "Wir entwickeln Web-Apps und interne Tools, die genau auf Ihre Anforderungen zugeschnitten sind." },
+  { icon: Monitor, title: "Professionelle Websites", desc: "Wir erstellen moderne, schnelle und mobiloptimierte Websites, die Ihr Unternehmen professionell präsentieren und Vertrauen bei potenziellen Kunden aufbauen." },
+  { icon: Server, title: "Domain & Hosting", desc: "Wir registrieren Ihre Wunschdomain, richten zuverlässiges Hosting ein und kümmern uns um alle technischen Details – damit Ihre Website immer erreichbar ist." },
+  { icon: Mail, title: "E-Mail & Google Business", desc: "Professionelle Geschäfts-E-Mail-Adressen und ein optimiertes Google Business Profil – für einen seriösen ersten Eindruck und mehr lokale Sichtbarkeit." },
+  { icon: TrendingUp, title: "SEO & Sichtbarkeit", desc: "Grundlegende SEO-Optimierung und digitale Marketingunterstützung, damit Ihr Unternehmen online gefunden wird und kontinuierlich wächst." },
+  { icon: FileText, title: "Kontaktformulare & Systeme", desc: "Individuelle Kontaktformulare, Anfrageformulare und einfache digitale Lösungen, die Ihre Kundenkommunikation erleichtern." },
+  { icon: Shield, title: "Wartung & Support", desc: "Wir pflegen und aktualisieren Ihre Website kontinuierlich und stehen Ihnen als verlässlicher technischer Partner zur Seite." },
 ];
 
 const ServicesSection = () => {
@@ -24,9 +26,10 @@ const ServicesSection = () => {
         >
           <p className="text-primary font-mono text-sm tracking-widest uppercase mb-3">Was wir bieten</p>
           <h2 className="text-3xl md:text-5xl font-bold">Unsere <span className="gradient-text">Leistungen</span></h2>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">Alles, was Ihr Unternehmen für einen professionellen Online-Auftritt braucht.</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
