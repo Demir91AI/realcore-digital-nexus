@@ -49,9 +49,6 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-primary font-mono text-sm tracking-widest uppercase mb-6">
-            RealCore Digital
-          </p>
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6">
             Wir entwickeln Websites und digitale Lösungen,{" "}
             <span className="gradient-text">die Ihr Unternehmen voranbringen.</span>

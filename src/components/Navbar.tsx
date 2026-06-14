@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/realcore-logo.png.asset.json";
 
 const links = [
   { label: "Leistungen", href: "#services" },
@@ -30,9 +31,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold tracking-tight">
-          <span className="gradient-text">RealCore</span>{" "}
-          <span className="text-foreground">Digital</span>
+        <a href="#" className="flex items-center gap-2">
+          <img src={logo.url} alt="RealCore Digital Logo" className="h-10 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
