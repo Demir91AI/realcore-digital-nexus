@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/realcore-logo-v2.jpg.asset.json";
+import logo from "@/assets/realcore-mark.png.asset.json";
 
 const links = [
   { label: "Leistungen", href: "#services" },
