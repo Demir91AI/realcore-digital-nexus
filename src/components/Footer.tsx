@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/realcore-mark.png.asset.json";
+import BrandMark from "@/components/BrandMark";
 
 const navLinks = [
   { label: "Leistungen", href: "#services" },
