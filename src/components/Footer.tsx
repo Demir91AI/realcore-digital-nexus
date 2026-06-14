@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/realcore-logo.png.asset.json";
+import logo from "@/assets/realcore-logo-v2.jpg.asset.json";
 
 const navLinks = [
   { label: "Leistungen", href: "#services" },
@@ -18,14 +18,14 @@ const Footer = () => (
             <img
               src={logo.url}
               alt="RealCore Digital Logo"
-              className="h-12 w-auto object-contain"
-              style={{ filter: "brightness(1.2) contrast(1.1)" }}
+              className="h-9 w-auto object-contain"
+              style={{ filter: "drop-shadow(0 0 10px hsl(197 100% 50% / 0.3))" }}
             />
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-foreground leading-tight tracking-tight">
-                RealCore Digital
+            <div className="flex flex-col leading-tight">
+              <span className="text-base font-bold text-foreground tracking-tight">
+                RealCore <span className="gradient-text">Digital</span>
               </span>
-              <span className="text-[10px] text-muted-foreground tracking-wide leading-tight">
+              <span className="text-[10px] text-muted-foreground tracking-wider uppercase">
                 Klar denken. Digital umsetzen.
               </span>
             </div>
