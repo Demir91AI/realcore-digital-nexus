@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const phrases = [
@@ -13,6 +13,7 @@ const HeroSection = () => {
   const [text, setText] = useState("");
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
+  const badgeControls = useAnimation();
 
   useEffect(() => {
     const current = phrases[phraseIdx];
