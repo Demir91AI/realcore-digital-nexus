@@ -37,7 +37,7 @@ const HeroSection = () => {
   }, [text, deleting, phraseIdx]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28">
       <div className="absolute inset-0 particle-grid" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full orb" style={{ background: "radial-gradient(circle, hsl(197 100% 50% / 0.15), transparent 70%)" }} />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full orb orb-delay-1" style={{ background: "radial-gradient(circle, hsl(258 100% 59% / 0.12), transparent 70%)" }} />
