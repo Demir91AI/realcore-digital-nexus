@@ -29,31 +29,24 @@ const ContactSection = () => {
     setStatus("idle");
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "b481c7e8-c54c-45a8-a521-282938f63be5",
-          subject: "Neue Projektanfrage – RealCore Digital",
-          from_name: form.name.trim(),
+      const { data, error } = await supabase.functions.invoke("submit-contact", {
+        body: {
+          name: form.name.trim(),
           email: form.email.trim(),
-          phone: form.phone.trim() || "—",
-          company: form.company.trim() || "—",
+          phone: form.phone.trim(),
+          company: form.company.trim(),
           message: form.message.trim(),
-          botcheck: "",
-        }),
+        },
       });
 
-      const data = await response.json();
-
-      if (data.success) {
+      if (error || !data?.success) {
+        setStatus("error");
+      } else {
         setStatus("success");
         setForm({ name: "", email: "", phone: "", company: "", message: "" });
-      } else {
-        setStatus("error");
       }
     } catch (err) {
-      console.error("Web3Forms error:", err);
+      console.error("Contact submit error:", err);
       setStatus("error");
     } finally {
       setIsSubmitting(false);
