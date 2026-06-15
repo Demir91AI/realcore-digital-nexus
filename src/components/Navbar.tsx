@@ -94,9 +94,9 @@ const Navbar = () => {
 
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <BrandMark size={42} className="transition-transform duration-300 group-hover:scale-105" />
-          <div className="hidden sm:flex flex-col leading-tight">
+        <a href="#" className="inline-flex items-center gap-3 group">
+          <BrandMark size={36} className="transition-transform duration-300 group-hover:scale-105" />
+          <div className="flex flex-col leading-tight">
             <span className="text-base font-bold text-foreground tracking-tight">
               RealCore <span className="gradient-text">Digital</span>
             </span>
