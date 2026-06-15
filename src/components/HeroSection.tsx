@@ -61,7 +61,7 @@ const HeroSection = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
             <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-semibold text-primary/90">
-              Digitalagentur für den Mittelstand
+              Wir machen Ihr Unternehmen digital
             </span>
           </motion.div>
 
