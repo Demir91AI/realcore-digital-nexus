@@ -1,14 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Monitor, Server, Mail, TrendingUp, FileText, Shield } from "lucide-react";
+import { Monitor, Globe, ShoppingCart, PenTool, Newspaper, Code } from "lucide-react";
 
 const services = [
-  { icon: Monitor, title: "Professionelle Websites", desc: "Wir erstellen moderne, schnelle und mobiloptimierte Websites, die Ihr Unternehmen professionell präsentieren und Vertrauen bei potenziellen Kunden aufbauen." },
-  { icon: Server, title: "Domain & Hosting", desc: "Wir registrieren Ihre Wunschdomain, richten zuverlässiges Hosting ein und kümmern uns um alle technischen Details – damit Ihre Website immer erreichbar ist." },
-  { icon: Mail, title: "E-Mail & Google Business", desc: "Professionelle Geschäfts-E-Mail-Adressen und ein optimiertes Google Business Profil – für einen seriösen ersten Eindruck und mehr lokale Sichtbarkeit." },
-  { icon: TrendingUp, title: "SEO & Sichtbarkeit", desc: "Grundlegende SEO-Optimierung und digitale Marketingunterstützung, damit Ihr Unternehmen online gefunden wird und kontinuierlich wächst." },
-  { icon: FileText, title: "Kontaktformulare & Systeme", desc: "Individuelle Kontaktformulare, Anfrageformulare und einfache digitale Lösungen, die Ihre Kundenkommunikation erleichtern." },
-  { icon: Shield, title: "Wartung & Support", desc: "Wir pflegen und aktualisieren Ihre Website kontinuierlich und stehen Ihnen als verlässlicher technischer Partner zur Seite." },
+  { icon: Monitor, title: "Firmenwebsite", desc: "Maßgeschneiderte Unternehmenswebsites, die Ihre Marke professionell präsentieren, Vertrauen aufbauen und Ihre Leistungen klar kommunizieren." },
+  { icon: Globe, title: "Landing Page", desc: "Zielgerichtete Einzelseiten für Kampagnen, Produkte oder Dienstleistungen – optimiert für Conversion und maximale Wirkung." },
+  { icon: ShoppingCart, title: "Onlineshop", desc: "Voll funktionsfähige E-Commerce-Lösungen, mit denen Sie Ihre Produkte online verkaufen und Ihr Geschäft digital ausweiten können." },
+  { icon: PenTool, title: "Portfolio-Website", desc: "Eindrucksvolle Präsentationswebsites für Kreative, Freelancer und Agenturen – Ihre Arbeit im besten Licht." },
+  { icon: Newspaper, title: "Blog & Content-Seite", desc: "Content-Management-Systeme für regelmäßige Veröffentlichungen – perfekt für Expertise-Marketing, SEO und Kundenbindung." },
+  { icon: Code, title: "Individuelle Webanwendung", desc: "Spezialisierte digitale Tools und maßgeschneiderte Anwendungen, die exakt auf die Prozesse Ihres Unternehmens zugeschnitten sind." },
 ];
 
 const ServicesSection = () => {
