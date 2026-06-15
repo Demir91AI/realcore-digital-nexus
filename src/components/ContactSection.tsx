@@ -1,12 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
-import emailjs from "@emailjs/browser";
-
-// EmailJS configuration — replace with real IDs from your EmailJS dashboard
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 const ContactSection = () => {
   const ref = useRef(null);
