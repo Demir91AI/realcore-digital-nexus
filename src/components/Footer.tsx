@@ -28,21 +28,6 @@ const Footer = () => (
           <p className="text-sm text-muted-foreground mt-4">
             Professionelle digitale Lösungen für kleine und mittelständische Unternehmen.
           </p>
-          <div className="flex gap-3 mt-4">
-            <a
-              href="https://www.linkedin.com/company/realcore-digital"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
-              aria-label="LinkedIn"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-            </a>
-          </div>
         </div>
 
         <div>
