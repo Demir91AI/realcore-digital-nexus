@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const phrases = [
@@ -13,6 +13,7 @@ const HeroSection = () => {
   const [text, setText] = useState("");
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
+  const badgeControls = useAnimation();
 
   useEffect(() => {
     const current = phrases[phraseIdx];
@@ -36,6 +37,17 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [text, deleting, phraseIdx]);
 
+  useEffect(() => {
+    badgeControls
+      .start({ opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.1 } })
+      .then(() => {
+        badgeControls.start({
+          y: [0, -4, 0],
+          transition: { repeat: Infinity, duration: 3, ease: "easeInOut" },
+        });
+      });
+  }, [badgeControls]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32 lg:pt-40">
       <div className="absolute inset-0 particle-grid" />
@@ -52,9 +64,10 @@ const HeroSection = () => {
           {/* Live indicator badge */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/25 backdrop-blur-md mb-8"
+            animate={badgeControls}
+            whileHover={{ scale: 1.04, borderColor: "hsl(197 100% 50% / 0.5)" }}
+            transition={{ duration: 0.25 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/25 backdrop-blur-md mb-8 cursor-default"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
