@@ -28,7 +28,7 @@ const Impressum = () => (
         <SectionHeading>Umsatzsteuerregelung</SectionHeading>
         <p>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</p>
 
-        <SectionHeading>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</SectionHeading>
+        <SectionHeading>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</SectionHeading>
         <p>Demir Sinanovic<br />Münchener Straße 78<br />83395 Freilassing</p>
 
         <SectionHeading>Haftung für Inhalte</SectionHeading>

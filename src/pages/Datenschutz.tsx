@@ -48,14 +48,21 @@ const Datenschutz = () => (
         <p>Diese Daten werden nicht ohne Ihre Einwilligung an Dritte weitergegeben. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Kundenanfragen).</p>
         <p>Ihre Daten werden gelöscht, sobald Ihre Anfrage abschließend bearbeitet wurde und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
 
-        <SectionHeading>5. Cookies</SectionHeading>
+        <SectionHeading>5. Drittanbieter – Web3Forms</SectionHeading>
+        <p>Für die Verarbeitung von Kontaktanfragen über das Formular auf dieser Website nutzen wir den Dienst Web3Forms (Anbieter: Bharat Karmakar, web3forms.com). Wenn Sie das Kontaktformular absenden, werden Ihre eingegebenen Daten (Name, E-Mail-Adresse, ggf. Telefonnummer, Nachricht) an die Server von Web3Forms übertragen und von dort an unsere E-Mail-Adresse weitergeleitet.</p>
+        <p>Web3Forms speichert die übermittelten Daten nicht dauerhaft auf eigenen Servern. Die Weiterleitung erfolgt verschlüsselt via HTTPS.</p>
+        <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung). Weitere Informationen zum Datenschutz bei Web3Forms finden Sie unter:{" "}
+          <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://web3forms.com/privacy</a>
+        </p>
+
+        <SectionHeading>6. Cookies</SectionHeading>
         <p>Diese Website verwendet ausschließlich technisch notwendige Cookies, die für den Betrieb der Website erforderlich sind (z. B. zur Speicherung Ihrer Cookie-Einwilligung). Diese Cookies werden ohne Ihre Einwilligung gesetzt, da sie technisch notwendig sind (Art. 6 Abs. 1 lit. f DSGVO).</p>
         <p>Es werden keine Tracking-Cookies, Analyse-Cookies oder Marketing-Cookies eingesetzt.</p>
 
-        <SectionHeading>6. Keine Analyse- oder Tracking-Tools</SectionHeading>
+        <SectionHeading>7. Keine Analyse- oder Tracking-Tools</SectionHeading>
         <p>Auf dieser Website werden keine Analyse- oder Tracking-Dienste eingesetzt (kein Google Analytics, kein Meta Pixel, keine vergleichbaren Dienste). Es findet keine Auswertung Ihres Nutzungsverhaltens statt.</p>
 
-        <SectionHeading>7. Ihre Rechte</SectionHeading>
+        <SectionHeading>8. Ihre Rechte</SectionHeading>
         <p>Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
         <ul className="list-disc pl-6 space-y-1">
           <li><strong className="text-foreground">Recht auf Auskunft</strong> (Art. 15 DSGVO)</li>
@@ -67,14 +74,14 @@ const Datenschutz = () => (
         </ul>
         <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: kontakt@realcore-digital.de</p>
 
-        <SectionHeading>8. Beschwerderecht bei der Aufsichtsbehörde</SectionHeading>
+        <SectionHeading>9. Beschwerderecht bei der Aufsichtsbehörde</SectionHeading>
         <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren.</p>
         <p className="text-foreground">Zuständige Aufsichtsbehörde für Bayern:<br />Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br />Promenade 18, 91522 Ansbach<br />
           <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">https://www.lda.bayern.de</a>
         </p>
 
-        <SectionHeading>9. Aktualität dieser Datenschutzerklärung</SectionHeading>
-        <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand: Juni 2025.</p>
+        <SectionHeading>10. Aktualität dieser Datenschutzerklärung</SectionHeading>
+        <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand: Juni 2026.</p>
       </div>
     </div>
   </div>
