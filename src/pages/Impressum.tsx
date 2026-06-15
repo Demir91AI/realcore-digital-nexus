@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
   <h2 className="text-xl font-semibold gradient-text glow-text-primary mt-8 first:mt-0 mb-3">{children}</h2>
@@ -7,6 +8,9 @@ const SectionHeading = ({ children }: { children: React.ReactNode }) => (
 
 const Impressum = () => (
   <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+    <Helmet>
+      <title>Impressum | RealCore Digital</title>
+    </Helmet>
     <div className="particle-grid opacity-40" />
     <div className="container mx-auto px-6 py-24 max-w-3xl relative">
       <Link to="/" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8">

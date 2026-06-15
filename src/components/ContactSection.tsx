@@ -1,60 +1,63 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, CheckCircle, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
+import { Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
+
+// EmailJS configuration — replace with real IDs from your EmailJS dashboard
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 const ContactSection = () => {
   const ref = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
-      toast.error("Bitte füllen Sie alle Pflichtfelder aus.");
+      setStatus("error");
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.email)) {
-      toast.error("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+      setStatus("error");
       return;
     }
 
     setIsSubmitting(true);
+    setStatus("idle");
 
     try {
-      const { error } = await supabase.from("contact_requests").insert({
-        name: form.name.trim(),
-        email: form.email.trim(),
-        phone: form.phone.trim() || null,
-        company: form.company.trim() || null,
-        message: form.message.trim(),
-      });
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name.trim(),
+          from_email: form.email.trim(),
+          phone: form.phone.trim() || "—",
+          company: form.company.trim() || "—",
+          message: form.message.trim(),
+          to_email: "kontakt@realcore-digital.de",
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
 
-      if (error) {
-        console.error("Supabase error:", error);
-        toast.error("Fehler beim Senden. Bitte versuchen Sie es später erneut.");
-        setIsSubmitting(false);
-        return;
-      }
-
-      setIsSuccess(true);
-      toast.success("Ihre Anfrage wurde erfolgreich übermittelt!");
+      setStatus("success");
       setForm({ name: "", email: "", phone: "", company: "", message: "" });
-
-      setTimeout(() => setIsSuccess(false), 5000);
     } catch (err) {
-      console.error("Submit error:", err);
-      toast.error("Ein unerwarteter Fehler ist aufgetreten.");
+      console.error("EmailJS error:", err);
+      setStatus("error");
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
@@ -79,16 +82,27 @@ const ContactSection = () => {
             onSubmit={handleSubmit}
             className="glass-card p-8 space-y-5"
           >
-            {isSuccess && (
+            {status === "success" && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="flex items-center gap-3 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm"
               >
                 <CheckCircle size={18} />
-                <span>Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.</span>
+                <span>Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden!</span>
               </motion.div>
             )}
+            {status === "error" && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-3 p-4 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm"
+              >
+                <AlertCircle size={18} />
+                <span>Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an kontakt@realcore-digital.de</span>
+              </motion.div>
+            )}
+
 
             <div>
               <label className="text-sm text-muted-foreground mb-1.5 block">Ihr Name *</label>
@@ -151,7 +165,7 @@ const ContactSection = () => {
               {isSubmitting ? (
                 <>
                   <Loader2 size={16} className="animate-spin" />
-                  Wird gesendet…
+                  Wird gesendet...
                 </>
               ) : (
                 <>
