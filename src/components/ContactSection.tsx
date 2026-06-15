@@ -1,12 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
-import emailjs from "@emailjs/browser";
-
-// EmailJS configuration — replace with real IDs from your EmailJS dashboard
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -34,24 +28,31 @@ const ContactSection = () => {
     setStatus("idle");
 
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "b481c7e8-c54c-45a8-a521-282938f63be5",
+          subject: "Neue Projektanfrage – RealCore Digital",
           from_name: form.name.trim(),
-          from_email: form.email.trim(),
+          email: form.email.trim(),
           phone: form.phone.trim() || "—",
           company: form.company.trim() || "—",
           message: form.message.trim(),
-          to_email: "kontakt@realcore-digital.de",
-        },
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
+          botcheck: "",
+        }),
+      });
 
-      setStatus("success");
-      setForm({ name: "", email: "", phone: "", company: "", message: "" });
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", phone: "", company: "", message: "" });
+      } else {
+        setStatus("error");
+      }
     } catch (err) {
-      console.error("EmailJS error:", err);
+      console.error("Web3Forms error:", err);
       setStatus("error");
     } finally {
       setIsSubmitting(false);
