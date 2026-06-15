@@ -37,6 +37,17 @@ const HeroSection = () => {
     return () => clearTimeout(timeout);
   }, [text, deleting, phraseIdx]);
 
+  useEffect(() => {
+    badgeControls
+      .start({ opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.1 } })
+      .then(() => {
+        badgeControls.start({
+          y: [0, -4, 0],
+          transition: { repeat: Infinity, duration: 3, ease: "easeInOut" },
+        });
+      });
+  }, [badgeControls]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-32 lg:pt-40">
       <div className="absolute inset-0 particle-grid" />
