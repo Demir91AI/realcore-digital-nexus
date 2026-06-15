@@ -29,7 +29,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-background/60 backdrop-blur-xl border-b border-primary/20 shadow-[0_1px_30px_-10px_hsl(197_100%_50%/0.4)]"
-          : "bg-transparent border-b border-transparent"
+          : "bg-background/50 backdrop-blur-md border-b border-transparent md:bg-transparent md:backdrop-blur-none"
       }`}
     >
       {/* Subtle glowing line under navbar on scroll */}
@@ -37,7 +37,7 @@ const Navbar = () => {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
       )}
 
-      <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <BrandMark size={42} className="transition-transform duration-300 group-hover:scale-105" />
