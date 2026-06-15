@@ -26,16 +26,18 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
         scrolled
-          ? "bg-background/60 backdrop-blur-xl border-b border-primary/20 shadow-[0_1px_30px_-10px_hsl(197_100%_50%/0.4)]"
-          : "bg-background/50 backdrop-blur-md border-b border-transparent md:bg-transparent md:backdrop-blur-none"
+          ? "bg-background/80 backdrop-blur-2xl border-b border-primary/15 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.5)]"
+          : "bg-background/30 backdrop-blur-sm border-b border-transparent"
       }`}
     >
-      {/* Subtle glowing line under navbar on scroll */}
-      {scrolled && (
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-      )}
+      {/* Elegant gradient glow line under navbar on scroll */}
+      <div
+        className={`absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent transition-opacity duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          scrolled ? "opacity-100" : "opacity-0"
+        }`}
+      />
 
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
