@@ -1,16 +1,59 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send } from "lucide-react";
+import { Send, CheckCircle, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Nachricht gesendet! (Demo)");
-    setForm({ name: "", email: "", phone: "", company: "", message: "" });
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      toast.error("Bitte füllen Sie alle Pflichtfelder aus.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(form.email)) {
+      toast.error("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.from("contact_requests").insert({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim() || null,
+        company: form.company.trim() || null,
+        message: form.message.trim(),
+      });
+
+      if (error) {
+        console.error("Supabase error:", error);
+        toast.error("Fehler beim Senden. Bitte versuchen Sie es später erneut.");
+        setIsSubmitting(false);
+        return;
+      }
+
+      setIsSuccess(true);
+      toast.success("Ihre Anfrage wurde erfolgreich übermittelt!");
+      setForm({ name: "", email: "", phone: "", company: "", message: "" });
+
+      setTimeout(() => setIsSuccess(false), 5000);
+    } catch (err) {
+      console.error("Submit error:", err);
+      toast.error("Ein unerwarteter Fehler ist aufgetreten.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -36,24 +79,37 @@ const ContactSection = () => {
             onSubmit={handleSubmit}
             className="glass-card p-8 space-y-5"
           >
+            {isSuccess && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center gap-3 p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm"
+              >
+                <CheckCircle size={18} />
+                <span>Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.</span>
+              </motion.div>
+            )}
+
             <div>
-              <label className="text-sm text-muted-foreground mb-1.5 block">Ihr Name</label>
+              <label className="text-sm text-muted-foreground mb-1.5 block">Ihr Name *</label>
               <input
                 type="text"
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
                 required
+                disabled={isSubmitting}
               />
             </div>
             <div>
-              <label className="text-sm text-muted-foreground mb-1.5 block">E-Mail-Adresse</label>
+              <label className="text-sm text-muted-foreground mb-1.5 block">E-Mail-Adresse *</label>
               <input
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
                 className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
                 required
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -63,6 +119,7 @@ const ContactSection = () => {
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
                 className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -72,23 +129,38 @@ const ContactSection = () => {
                 value={form.company}
                 onChange={(e) => setForm({ ...form, company: e.target.value })}
                 className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+                disabled={isSubmitting}
               />
             </div>
             <div>
-              <label className="text-sm text-muted-foreground mb-1.5 block">Ihre Nachricht / Ihr Projekt</label>
+              <label className="text-sm text-muted-foreground mb-1.5 block">Ihre Nachricht / Ihr Projekt *</label>
               <textarea
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 rows={4}
                 className="w-full bg-muted/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors resize-none"
                 required
+                disabled={isSubmitting}
               />
             </div>
-            <button type="submit" className="btn-glow w-full flex items-center justify-center gap-2">
-              <Send size={16} /> Jetzt anfragen
+            <button
+              type="submit"
+              className="btn-glow w-full flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 size={16} className="animate-spin" />
+                  Wird gesendet…
+                </>
+              ) : (
+                <>
+                  <Send size={16} /> Jetzt anfragen
+                </>
+              )}
             </button>
             <p className="text-xs text-muted-foreground text-center">
-              Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+              Ihre Daten werden verschlüsselt übertragen und verarbeitet.
             </p>
           </motion.form>
         </div>
