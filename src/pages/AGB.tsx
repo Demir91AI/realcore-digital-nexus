@@ -10,6 +10,11 @@ const AGB = () => (
   <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
     <Helmet>
       <title>AGB | RealCore Digital</title>
+      <meta name="description" content="Allgemeine Geschäftsbedingungen von RealCore Digital: Leistungsumfang, Mitwirkungspflichten, Vergütung, Gewährleistung und Haftung für unsere Digitalprojekte." />
+      <link rel="canonical" href="https://realcore-digital.de/agb" />
+      <meta property="og:title" content="AGB | RealCore Digital" />
+      <meta property="og:description" content="Allgemeine Geschäftsbedingungen von RealCore Digital – Leistungsumfang, Vergütung, Gewährleistung und Haftung im Überblick." />
+      <meta property="og:url" content="https://realcore-digital.de/agb" />
     </Helmet>
     <div className="particle-grid opacity-40" />
     <div className="container mx-auto px-6 py-24 max-w-3xl relative">
