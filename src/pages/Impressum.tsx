@@ -10,6 +10,11 @@ const Impressum = () => (
   <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
     <Helmet>
       <title>Impressum | RealCore Digital</title>
+      <meta name="description" content="Impressum von RealCore Digital – Anbieterkennzeichnung, Kontaktdaten und rechtliche Hinweise gemäß § 5 TMG für unsere Digitalagentur aus Freilassing." />
+      <link rel="canonical" href="https://realcore-digital.de/impressum" />
+      <meta property="og:title" content="Impressum | RealCore Digital" />
+      <meta property="og:description" content="Impressum von RealCore Digital – Anbieterkennzeichnung, Kontaktdaten und rechtliche Hinweise gemäß § 5 TMG." />
+      <meta property="og:url" content="https://realcore-digital.de/impressum" />
     </Helmet>
     <div className="particle-grid opacity-40" />
     <div className="container mx-auto px-6 py-24 max-w-3xl relative">

@@ -14,6 +14,11 @@ const Datenschutz = () => (
   <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
     <Helmet>
       <title>Datenschutz | RealCore Digital</title>
+      <meta name="description" content="Datenschutzerklärung von RealCore Digital nach DSGVO: Informationen zu Datenverarbeitung, Hosting, Kontaktformular, Cookies und Ihren Rechten als Nutzer." />
+      <link rel="canonical" href="https://realcore-digital.de/datenschutz" />
+      <meta property="og:title" content="Datenschutz | RealCore Digital" />
+      <meta property="og:description" content="Datenschutzerklärung von RealCore Digital nach DSGVO – Datenverarbeitung, Cookies und Nutzerrechte transparent erklärt." />
+      <meta property="og:url" content="https://realcore-digital.de/datenschutz" />
     </Helmet>
     <div className="particle-grid opacity-40" />
     <div className="container mx-auto px-6 py-24 max-w-3xl relative">
