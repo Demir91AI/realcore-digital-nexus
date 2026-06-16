@@ -1,0 +1,12 @@
+# RealCore Digital
+
+> Digitalagentur für den Mittelstand: Websites, digitale Lösungen und Online-Präsenz für kleine und mittelständische Unternehmen. Klar denken. Digital umsetzen.
+
+RealCore Digital aus Freilassing entwickelt professionelle Websites, automatisierte Workflows, E-Mail-Lösungen, Hosting, SEO und laufenden Support für deutsche KMU.
+
+## Pages
+
+- [Startseite](/): Leistungen, Prozess, FAQ und Kontakt.
+- [Impressum](/impressum): Anbieterkennzeichnung nach § 5 TMG.
+- [Datenschutz](/datenschutz): Datenschutzerklärung gemäß DSGVO.
+- [AGB](/agb): Allgemeine Geschäftsbedingungen.
